@@ -1,2 +1,7 @@
 server:
   port: 5875
+spring:
+  rabbitmq:
+    addresses:
+    username:
+    password:
