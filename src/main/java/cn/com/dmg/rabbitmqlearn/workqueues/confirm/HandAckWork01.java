@@ -1,19 +1,19 @@
-package cn.com.dmg.rabbitmqlearn.workqueues.handack;
+package cn.com.dmg.rabbitmqlearn.workqueues.confirm;
 
 import cn.com.dmg.rabbitmqlearn.utils.RabbitMqUtils;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.DeliverCallback;
 
-public class HandAckWork02 {
+public class HandAckWork01 {
     private static final String ACK_QUEUE_NAME="ack_queue";
     public static void main(String[] args) throws Exception {
         Channel channel = RabbitMqUtils.getChannel();
-        System.out.println("C2  等待接收消息处理时间较长");
+        System.out.println("C1  等待接收消息处理时间较短");
         // 消息消费的时候如何处理消息
         DeliverCallback deliverCallback=(consumerTag, delivery)->{
             String message= new String(delivery.getBody());
             try {
-                Thread.sleep(30000);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

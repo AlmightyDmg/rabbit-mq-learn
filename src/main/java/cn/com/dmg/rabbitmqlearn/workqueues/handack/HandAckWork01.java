@@ -24,6 +24,8 @@ public class HandAckWork01 {
             */
             channel.basicAck(delivery.getEnvelope().getDeliveryTag(),false);
         };
+        //设置为不公平分发
+        channel.basicQos(1);
         // 采用手动应答
         channel.basicConsume(ACK_QUEUE_NAME,false,deliverCallback,(consumerTag)->{
             System.out.println(consumerTag+" 消费者取消消费接口回调逻辑");

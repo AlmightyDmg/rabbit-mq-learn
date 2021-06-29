@@ -1,4 +1,4 @@
-package cn.com.dmg.rabbitmqlearn.workqueues.handack;
+package cn.com.dmg.rabbitmqlearn.workqueues.confirm;
 
 import cn.com.dmg.rabbitmqlearn.utils.RabbitMqUtils;
 import com.rabbitmq.client.Channel;
